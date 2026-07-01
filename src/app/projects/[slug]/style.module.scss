@@ -1,0 +1,78 @@
+@use "../../../styles/tokens" as *;
+@use "../../../styles/mixins" as *;
+
+.main {
+  min-height: 100vh;
+}
+
+.article {
+  @include container;
+  padding-block: $space-16;
+}
+
+.backLink {
+  display: inline-flex;
+  margin-bottom: $space-8;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+.header {
+  max-width: 820px;
+  margin-bottom: $space-10;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin-bottom: $space-4;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  font-weight: 800;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+}
+
+.summary {
+  margin: $space-5 0 0;
+  color: var(--color-muted);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin: $space-6 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: $space-1 $space-3;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.contentLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 860px);
+  align-items: start;
+}
+
+.contentColumn {
+  min-width: 0;
+}

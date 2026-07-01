@@ -1,0 +1,54 @@
+@use "../../../../styles/tokens" as *;
+
+.card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: $radius-lg;
+  background: var(--color-surface);
+  padding: $space-6;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.title {
+  margin: $space-4 0 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.title a:hover {
+  color: var(--color-accent);
+}
+
+.summary {
+  margin: $space-4 0 0;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin: auto 0 0;
+  padding: $space-6 0 0;
+  list-style: none;
+}
+
+.tag {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: $space-1 $space-3;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}

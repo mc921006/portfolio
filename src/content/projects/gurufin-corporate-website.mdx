@@ -1,0 +1,239 @@
+# Gurufin Corporate Website — Web3 기업 홈페이지
+
+## 프로젝트 개요
+
+Web3 및 블록체인 기반 금융 서비스를 소개하는 Corporate Website 프로젝트입니다.
+
+기업 소개, 서비스 설명, 기술 비전, 파트너십, 네트워크 구조 등을 사용자에게 직관적으로 전달할 수 있도록 설계했으며, 다양한 SVG 애니메이션과 인터랙션 요소를 활용하여 브랜드 아이덴티티를 표현한 것이 특징입니다.
+
+반응형 환경을 고려하여 Desktop / Tablet / Mobile 전 환경에서 자연스럽게 동작하도록 구현했으며, SEO 및 퍼포먼스 최적화까지 함께 진행했습니다.
+
+---
+
+## 담당 역할
+
+- Front-End 개발 전반 담당
+- 메인 랜딩 페이지 및 인터랙션 UI 개발
+- SVG 기반 애니메이션 구현
+- 반응형 UI 및 Layout 구성
+- SEO 및 Sitemap 최적화
+- 공통 컴포넌트 구조화
+- 성능 최적화 및 사용자 경험 개선
+
+---
+
+## 기술 스택
+
+### Front-End
+
+- Vue 3
+- Vite
+- TypeScript
+- SCSS
+
+### Animation & UI
+
+- SVG Animation
+- CSS Animation
+- Intersection Observer
+
+### SEO
+
+- robots.txt
+- sitemap.xml
+- Open Graph
+- JSON-LD
+
+---
+
+## 주요 기능
+
+### 1. 기업 랜딩 페이지 구축
+
+기업의 서비스 및 기술 비전을 소개하는 메인 랜딩 페이지를 구축했습니다.
+
+### 제공 기능
+
+- 서비스 소개
+- 블록체인 네트워크 설명
+- 파트너사 소개
+- 기술 구조 시각화
+- Contact 섹션
+
+### 구현 포인트
+
+- 브랜드 중심 UI 설계
+- 반응형 레이아웃 구성
+- Section 단위 인터랙션 처리
+- 자연스러운 스크롤 흐름 구현
+
+---
+
+### 2. SVG 기반 인터랙션 및 애니메이션
+
+단순 정적 페이지가 아닌 브랜드 아이덴티티를 표현할 수 있도록 다양한 SVG 애니메이션을 구현했습니다.
+
+### 구현 기능
+
+- SVG Motion Animation
+- Scroll 기반 애니메이션
+- Hover 인터랙션
+- Gradient 및 Glow 효과
+
+### 구현 포인트
+
+- SVG Component 구조화
+- 성능을 고려한 애니메이션 처리
+- 반응형 환경 대응
+- 브라우저 호환성 고려
+
+---
+
+### 3. 반응형 UI 구현
+
+Desktop / Tablet / Mobile 환경을 모두 고려한 반응형 UI를 구현했습니다.
+
+### 구현 포인트
+
+- Grid/Flex 기반 Layout 구성
+- Header 및 Navigation 반응형 처리
+- 모바일 전용 Fullscreen Menu 구현
+- 반응형 Typography 처리
+
+---
+
+### 4. SEO 및 검색 최적화
+
+검색 엔진 노출 및 공유 최적화를 위해 SEO 관련 설정을 적용했습니다.
+
+### 적용 항목
+
+- robots.txt 설정
+- sitemap.xml 자동 생성
+- Open Graph 메타 태그
+- JSON-LD 구조화 데이터 적용
+- Dynamic Meta Tag 처리
+
+### 구현 포인트
+
+- vite 기반 sitemap 자동 생성
+- 페이지별 SEO 관리 구조 설계
+- 검색 엔진 친화적 구조 구성
+
+---
+
+### 5. 공통 컴포넌트 구조화
+
+프로젝트 내 반복되는 UI 요소를 공통 컴포넌트화하여 유지보수성을 높였습니다.
+
+### 구현 컴포넌트
+
+- Header
+- Navigation
+- Footer
+- Section Wrapper
+- Button
+- Card
+- Modal
+
+### 구현 포인트
+
+- 재사용 가능한 컴포넌트 구조 설계
+- Props 기반 확장성 고려
+- 반응형 UI 공통화
+
+---
+
+## 성능 최적화 경험
+
+### 애니메이션 성능 최적화
+
+다수의 SVG 및 애니메이션 요소 사용으로 인해 렌더링 부하가 발생할 수 있어 최적화를 진행했습니다.
+
+### 개선 내용
+
+- 불필요한 Re-render 최소화
+- CSS 기반 애니메이션 우선 처리
+- GPU 가속 활용
+- 이미지 및 SVG 최적화
+
+### 결과
+
+- 스크롤 성능 개선
+- 애니메이션 부드러움 향상
+- 모바일 환경 안정성 개선
+
+---
+
+### Layout 및 반응형 최적화
+
+복잡한 레이아웃 구조에서 발생하는 overflow 및 sticky 관련 이슈를 개선했습니다.
+
+### 개선 내용
+
+- overflow 구조 재설계
+- min-width 및 flex/grid 최적화
+- Sticky Layout 안정화
+
+---
+
+## 트러블 슈팅
+
+### SVG Import 및 빌드 오류 해결
+
+### 문제
+
+프로젝트별로 SVG import 방식 차이로 인해 빌드 오류 발생
+
+### 해결
+
+- @svgr/webpack 설정 적용
+- SVG Component 구조 통일
+- 빌드 환경별 설정 최적화
+
+---
+
+### 반응형 Chart/Layout 깨짐 현상 해결
+
+### 문제
+
+특정 해상도에서 Grid/Flex 구조가 깨지며 UI가 비정상적으로 렌더링되는 문제 발생
+
+### 해결
+
+- min-width: 0 적용
+- Grid/Flex 구조 재설계
+- 반응형 기준 재정의
+
+---
+
+## 프로젝트를 통해 얻은 경험
+
+이 프로젝트를 통해 단순 UI 구현을 넘어 브랜드 경험을 전달하는 Front-End 설계에 대해 깊이 고민할 수 있었습니다.
+
+특히 아래 영역에 대한 이해도를 높일 수 있었습니다.
+
+- SVG 기반 인터랙션 구현
+- 반응형 UI/UX 설계
+- SEO 및 검색 최적화
+- Vite 기반 프로젝트 구조 설계
+- 성능 최적화 및 렌더링 개선
+- 사용자 경험 중심의 Landing Page 개발
+
+---
+
+## 핵심 키워드
+
+- Corporate Website
+- Landing Page
+- Web3
+- Vue 3
+- Vite
+- TypeScript
+- SVG Animation
+- Responsive UI
+- SEO
+- Sitemap
+- Front-End
+- UI/UX
+- Brand Experience

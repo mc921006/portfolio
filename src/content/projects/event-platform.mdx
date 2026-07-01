@@ -1,0 +1,137 @@
+# Event Platform — Web3 Raffle Event Service
+
+## 프로젝트 개요
+
+WalletConnect 기반 사용자 인증과 포인트 시스템을 활용하여 이벤트 참여 및 래플(Raffle) 기능을 제공하는 Web3 이벤트 플랫폼입니다.
+
+사용자는 지갑을 연결하여 이벤트에 참여하고, 보유 포인트를 사용해 래플 티켓을 구매할 수 있으며, 참여 내역과 당첨 결과를 확인할 수 있습니다.
+
+---
+
+## 담당 역할
+
+- Home 화면 개발 및 유지보수
+- Raffle 기능 개발
+- WalletConnect 상태 기반 UI 제어
+- React Query 상태 관리
+- 포인트 및 구매 데이터 연동
+
+---
+
+## 주요 기능
+
+### Home 화면 개발
+
+이벤트 플랫폼의 메인 화면으로 사용자의 참여 현황 및 이벤트 정보를 제공하는 화면을 개발했습니다.
+
+### 구현 내용
+
+- 이벤트 정보 표시
+- 사용자 포인트 정보 연동
+- 이벤트 상태별 UI 처리
+- 로그인 여부에 따른 화면 분기
+- 반응형 UI 구현
+
+---
+
+### Raffle 기능 개발
+
+포인트를 사용하여 래플 티켓을 구매하고 참여할 수 있는 기능을 개발했습니다.
+
+### 구현 내용
+
+- 래플 상세 정보 조회
+- 티켓 구매 기능 구현
+- 구매 가능 조건 검증
+- 참여 내역 조회
+- 구매 완료 후 상태 동기화
+
+### 사용 기술
+
+- React Query
+- WalletConnect
+- TypeScript
+- React Router
+
+---
+
+## 기술적 구현 포인트
+
+### WalletConnect 상태 관리
+
+WalletConnect 연결 상태와 서비스 세션 상태를 기반으로 화면 접근 및 기능 사용 여부를 제어했습니다.
+
+### 구현 내용
+
+- 지갑 연결 상태 확인
+- 연결 해제 시 UI 상태 변경
+- 세션 상태와 Wallet 상태 분리 관리
+- 인증 상태 기반 기능 제어
+
+---
+
+### React Query 기반 데이터 관리
+
+포인트, 래플 정보, 참여 내역 등의 데이터를 React Query로 관리했습니다.
+
+### 구현 내용
+
+- Query Key 설계
+- Mutation 처리
+- invalidateQueries 활용
+- 캐시 기반 데이터 동기화
+
+---
+
+## 트러블 슈팅
+
+### Wallet 상태와 Session 상태 불일치
+
+### 문제
+
+지갑 연결이 해제되었지만 서비스 세션은 유지되는 상황이 발생하여 실제 인증 상태와 UI 상태가 달라지는 문제가 발생했습니다.
+
+### 해결
+
+- Wallet 상태와 Session 상태를 별도로 관리
+- 기능별 접근 조건 재정의
+- 캐시 초기화 및 상태 동기화 처리
+
+---
+
+### 구매 후 데이터 갱신 문제
+
+### 문제
+
+티켓 구매 후 포인트 및 참여 정보가 즉시 반영되지 않는 문제가 발생했습니다.
+
+### 해결
+
+- React Query의 invalidateQueries 적용
+- 관련 Query 재조회 처리
+- 구매 완료 후 상태 동기화 로직 추가
+
+---
+
+## 프로젝트를 통해 얻은 경험
+
+- WalletConnect 기반 인증 흐름 이해
+- React Query 캐싱 및 상태 관리 경험
+- Web3 서비스의 구매 프로세스 구현 경험
+- Session과 Wallet 상태를 분리하여 관리하는 설계 경험
+- 운영 중인 서비스의 기능 추가 및 유지보수 경험
+
+---
+
+## 핵심 키워드
+
+- React
+- TypeScript
+- React Query
+- WalletConnect
+- Web3
+- Raffle
+- Event Platform
+- Session Management
+- State Management
+- Front-End Development

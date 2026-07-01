@@ -1,0 +1,35 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/mixins" as *;
+
+.main {
+  min-height: 100vh;
+}
+
+.content {
+  @include container;
+  padding-block: $space-16;
+}
+
+.header {
+  max-width: 760px;
+  margin-bottom: $space-8;
+}
+
+.eyebrow {
+  margin: 0 0 $space-3;
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  line-height: 1;
+}
+
+.description {
+  margin: $space-5 0 0;
+  color: var(--color-muted);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}

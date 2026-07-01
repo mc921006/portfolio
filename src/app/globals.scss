@@ -1,0 +1,56 @@
+@use "../styles/tokens" as *;
+
+:root {
+  --color-background: #{$color-background};
+  --color-surface: #{$color-surface};
+  --color-surface-muted: #{$color-surface-muted};
+  --color-foreground: #{$color-foreground};
+  --color-muted: #{$color-muted};
+  --color-border: #{$color-border};
+  --color-accent: #{$color-accent};
+  --color-accent-foreground: #{$color-accent-foreground};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #{$color-dark-background};
+    --color-surface: #{$color-dark-surface};
+    --color-surface-muted: #{$color-dark-surface-muted};
+    --color-foreground: #{$color-dark-foreground};
+    --color-muted: #{$color-dark-muted};
+    --color-border: #{$color-dark-border};
+    --color-accent: #{$color-dark-accent};
+    --color-accent-foreground: #{$color-dark-background};
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  color-scheme: light dark;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
