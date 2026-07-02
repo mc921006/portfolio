@@ -3,32 +3,53 @@
 
 .section {
   @include container;
-  padding-block: $space-16;
+  padding-block: clamp($space-16, 10vw, 8rem);
 }
 
 .header {
-  max-width: 680px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+  gap: $space-6;
+  align-items: end;
+  max-width: none;
   margin-bottom: $space-8;
 }
 
 .eyebrow {
+  grid-column: 1;
   margin: 0 0 $space-3;
   color: var(--color-accent);
+  font-family: $font-mono;
   font-size: 0.875rem;
   font-weight: 800;
-  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .title {
+  grid-column: 1;
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
   line-height: 1.05;
+  font-weight: 650;
 }
 
 .description {
-  margin: $space-4 0 0;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
   color: var(--color-muted);
-  font-size: 1.0625rem;
+  font-size: 0.975rem;
   line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .description {
+    grid-column: auto;
+    grid-row: auto;
+    margin-top: $space-4;
+  }
 }

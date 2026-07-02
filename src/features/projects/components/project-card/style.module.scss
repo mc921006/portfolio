@@ -1,13 +1,44 @@
+@use "../../../../styles/mixins" as *;
 @use "../../../../styles/tokens" as *;
 
 .card {
+  @include glass-panel;
   display: flex;
   min-height: 100%;
   flex-direction: column;
-  border: 1px solid var(--color-border);
-  border-radius: $radius-lg;
-  background: var(--color-surface);
+  overflow: hidden;
+  border-radius: $radius-2xl;
   padding: $space-6;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.visual {
+  display: grid;
+  min-height: 9.5rem;
+  place-items: center;
+  border: 1px solid var(--color-hairline);
+  border-radius: $radius-xl;
+  margin-bottom: $space-5;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(125, 211, 252, 0.28), transparent 4rem),
+    linear-gradient(135deg, rgba(125, 211, 252, 0.18), rgba(99, 102, 241, 0.11) 45%, rgba(255, 255, 255, 0.03)),
+    repeating-linear-gradient(0deg, transparent 0 1.25rem, rgba(255, 255, 255, 0.045) 1.25rem 1.3rem);
+}
+
+.visual span {
+  color: rgba(245, 247, 251, 0.7);
+  font-family: $font-mono;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-weight: 900;
 }
 
 .meta {
@@ -15,14 +46,16 @@
   flex-wrap: wrap;
   gap: $space-2;
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-family: $font-mono;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
 .title {
   margin: $space-4 0 0;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1.25;
+  letter-spacing: 0;
 }
 
 .title a:hover {
@@ -32,7 +65,7 @@
 .summary {
   margin: $space-4 0 0;
   color: var(--color-muted);
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 .tags {
@@ -45,10 +78,11 @@
 }
 
 .tag {
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: $space-1 $space-3;
+  border: 1px solid var(--color-hairline);
+  border-radius: $radius-sm;
+  padding: $space-1 $space-2;
   color: var(--color-muted);
-  font-size: 0.8125rem;
+  font-family: $font-mono;
+  font-size: 0.7rem;
   font-weight: 700;
 }

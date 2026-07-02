@@ -13,7 +13,7 @@
 }
 
 .section:not(:first-child) {
-  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+  border-top: 1px solid var(--color-hairline);
   padding-top: $space-12;
 }
 
@@ -33,6 +33,7 @@
   border: 1px solid var(--color-border);
   border-radius: 999px;
   color: var(--color-accent);
+  font-family: $font-mono;
   font-size: 0.8125rem;
   font-weight: 800;
 }
@@ -103,11 +104,12 @@
 }
 
 .tag {
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-surface-muted);
+  border: 1px solid var(--color-hairline);
+  border-radius: $radius-sm;
+  background: rgba(255, 255, 255, 0.04);
   padding: $space-2 $space-3;
   color: var(--color-foreground);
+  font-family: $font-mono;
   font-size: 0.875rem;
   font-weight: 800;
 }
@@ -127,10 +129,10 @@
 
 .codeBlock {
   overflow-x: auto;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-hairline);
   border-radius: $radius-md;
   margin: 0;
-  background: var(--color-surface-muted);
+  background: rgba(255, 255, 255, 0.045);
   padding: $space-5;
   color: var(--color-foreground);
   font-size: 0.9375rem;
@@ -145,14 +147,15 @@
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-hairline);
   border-radius: $radius-md;
 }
 
 .callout {
+  border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
   border-left: 4px solid var(--color-accent);
-  border-radius: $radius-sm;
-  background: var(--color-surface-muted);
+  border-radius: $radius-md;
+  background: rgba(125, 211, 252, 0.08);
   padding: $space-4 $space-5;
   color: var(--color-foreground);
   line-height: 1.75;
@@ -170,7 +173,7 @@
 .troubleCase {
   display: grid;
   gap: $space-5;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-hairline);
   padding-top: $space-6;
 }
 
@@ -195,14 +198,15 @@
   display: grid;
   align-content: start;
   gap: $space-3;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-hairline);
   border-radius: $radius-md;
-  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  background: rgba(255, 255, 255, 0.04);
   padding: $space-5;
 }
 
 .troubleLabel {
   color: var(--color-accent);
+  font-family: $font-mono;
   font-size: 0.8125rem;
   font-weight: 900;
 }

@@ -32,28 +32,26 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className={styles.snapshot} aria-label="기술 스택 요약">
-            <h2 className={styles.snapshotTitle}>현재 사용 기술</h2>
-            <ul className={styles.snapshotList}>
-              <li className={styles.snapshotItem}>
-                <span className={styles.skillBadge}>Next.js</span>
-              </li>
-              <li className={styles.snapshotItem}>
-                <span className={styles.skillBadge}>React</span>
-              </li>
-              <li className={styles.snapshotItem}>
-                <span className={styles.skillBadge}>TS</span>
-              </li>
-              <li className={styles.snapshotItem}>
-                <span className={styles.skillBadge}>Sass</span>
-              </li>
-              <li className={styles.snapshotItem}>
-                <span className={styles.skillBadge}>Supabase</span>
-              </li>
-              <li className={styles.snapshotItem}>
-                <span className={styles.skillBadge}>OpenAI</span>
-              </li>
-            </ul>
+          <aside className={styles.snapshot} aria-label="개발자 정보 요약">
+            <h2 className={styles.snapshotTitle}>WHOAMI</h2>
+            <dl className={styles.whoamiList}>
+              <div className={styles.whoamiRow}>
+                <dt>Role</dt>
+                <dd>Frontend Developer</dd>
+              </div>
+              <div className={styles.whoamiRow}>
+                <dt>Stack</dt>
+                <dd>Next.js · React · TypeScript</dd>
+              </div>
+              <div className={styles.whoamiRow}>
+                <dt>Focus</dt>
+                <dd>Blockchain · AI</dd>
+              </div>
+              <div className={styles.whoamiRow}>
+                <dt>Status</dt>
+                <dd>Learning &amp; Building</dd>
+              </div>
+            </dl>
           </aside>
         </section>
 

@@ -14,10 +14,14 @@ const projectTypeLabels: Record<Project["type"], string> = {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className={styles.card}>
+      <div className={styles.visual} aria-hidden="true">
+        <span>{project.title.slice(0, 2)}</span>
+      </div>
       <div className={styles.meta}>
         <span>
           {project.period} · {projectTypeLabels[project.type]}
         </span>
+        <span>{project.role}</span>
       </div>
       <h3 className={styles.title}>
         <Link href={`/projects/${project.slug}`}>{project.title}</Link>

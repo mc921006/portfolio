@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: $radius-md;
+  border-radius: 999px;
   padding: 0 $space-5;
   font-weight: 700;
   transition:
@@ -28,10 +28,11 @@
 .primary {
   color: var(--color-accent-foreground);
   background: var(--color-accent);
+  box-shadow: var(--shadow-glow);
 }
 
 .secondary {
   color: var(--color-foreground);
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.04);
   border-color: var(--color-border);
 }

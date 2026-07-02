@@ -2,37 +2,71 @@
 @use "../../../styles/mixins" as *;
 
 .header {
-  @include container;
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: grid;
+  place-items: center;
+  padding: $space-4 $space-4 0;
+}
+
+.shell {
+  @include glass-panel;
   display: flex;
-  min-height: 4.5rem;
+  width: min(100%, 64rem);
+  min-height: 3.5rem;
   align-items: center;
   justify-content: space-between;
   gap: $space-4;
-  border-bottom: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: $space-2 $space-3;
 }
 
 .brand {
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.navigation {
   display: flex;
   align-items: center;
   gap: $space-2;
 }
 
-.navigationLink {
-  border-radius: $radius-sm;
-  padding: $space-2 $space-3;
+.brandMark {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--color-accent-foreground);
+  background: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.brandText {
   color: var(--color-muted);
-  font-size: 0.9375rem;
+  font-family: $font-mono;
+  font-size: 0.75rem;
   font-weight: 700;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+}
+
+.navigationLink {
+  border-radius: 999px;
+  padding: $space-2 $space-4;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
 }
 
 .navigationLink:hover {
   color: var(--color-foreground);
-  background: var(--color-surface-muted);
+  background: rgba(125, 211, 252, 0.12);
 }
 
 .navigationLink:focus-visible {
@@ -40,10 +74,15 @@
 }
 
 @media (max-width: 520px) {
-  .header {
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    padding-block: $space-4;
+  .shell {
+    border-radius: $radius-xl;
+  }
+
+  .brandText {
+    display: none;
+  }
+
+  .navigationLink {
+    padding-inline: $space-3;
   }
 }

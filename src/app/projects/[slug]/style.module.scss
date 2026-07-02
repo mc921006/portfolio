@@ -3,27 +3,51 @@
 
 .main {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .article {
   @include container;
-  padding-block: $space-16;
+  padding-block: clamp($space-10, 8vw, 6rem);
 }
 
 .backLink {
   display: inline-flex;
+  border: 1px solid var(--color-hairline);
+  border-radius: 999px;
   margin-bottom: $space-8;
+  padding: $space-2 $space-4;
   color: var(--color-muted);
+  font-size: 0.9rem;
   font-weight: 700;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease;
 }
 
 .backLink:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 42%, transparent);
   color: var(--color-accent);
+  background: rgba(125, 211, 252, 0.08);
 }
 
 .header {
+  position: relative;
   max-width: 820px;
-  margin-bottom: $space-10;
+  margin-bottom: $space-12;
+}
+
+.header::after {
+  position: absolute;
+  z-index: -1;
+  inset: -5rem auto auto 58%;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.14);
+  filter: blur(90px);
+  content: "";
 }
 
 .meta {
@@ -32,14 +56,16 @@
   gap: $space-2;
   margin-bottom: $space-4;
   color: var(--color-muted);
-  font-size: 0.9375rem;
+  font-family: $font-mono;
+  font-size: 0.8125rem;
   font-weight: 800;
 }
 
 .title {
   margin: 0;
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: 1;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  font-weight: 650;
 }
 
 .summary {
@@ -59,11 +85,12 @@
 }
 
 .tag {
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: $space-1 $space-3;
+  border: 1px solid var(--color-hairline);
+  border-radius: $radius-sm;
+  padding: $space-2 $space-3;
   color: var(--color-muted);
-  font-size: 0.8125rem;
+  font-family: $font-mono;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
