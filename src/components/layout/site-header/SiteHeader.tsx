@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 const navigationItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
 ];
 
 export function SiteHeader() {

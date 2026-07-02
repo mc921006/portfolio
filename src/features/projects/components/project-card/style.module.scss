@@ -9,6 +9,7 @@
   overflow: hidden;
   border-radius: $radius-2xl;
   padding: $space-6;
+  color: inherit;
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease,
@@ -58,7 +59,7 @@
   letter-spacing: 0;
 }
 
-.title a:hover {
+.card:hover .title {
   color: var(--color-accent);
 }
 

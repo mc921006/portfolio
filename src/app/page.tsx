@@ -2,6 +2,7 @@ import { SiteFooter } from "@/components/layout/site-footer/SiteFooter";
 import { SiteHeader } from "@/components/layout/site-header/SiteHeader";
 import { Button } from "@/components/ui/button/Button";
 import { Section } from "@/components/ui/section/Section";
+import { ExperienceList } from "@/features/experience/components/experience-list/ExperienceList";
 import { ProjectList } from "@/features/projects/components/project-list/ProjectList";
 import { projects } from "@/features/projects/data/mock";
 import styles from "./style.module.scss";
@@ -59,9 +60,24 @@ export default function Home() {
           <Section
             eyebrow="Selected Work"
             title="대표 프로젝트"
-            description="이번 단계에서는 실제 콘텐츠 대신 구조 검증용 더미 데이터를 사용합니다."
+            description="실무 경험과 개인 프로젝트를 통해 개발한 대표 작업"
           >
+            <div className={styles.featuredActions}>
+              <Button href="/projects" variant="secondary">
+                전체보기
+              </Button>
+            </div>
             <ProjectList projects={projects.slice(0, 3)} />
+          </Section>
+        </div>
+
+        <div id="experience">
+          <Section
+            eyebrow="Experience"
+            title="경험"
+            description="다양한 프로젝트를 통해 쌓아온 실무 경험"
+          >
+            <ExperienceList />
           </Section>
         </div>
       </main>

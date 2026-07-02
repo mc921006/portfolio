@@ -13,9 +13,6 @@ export function ProjectList({ projects }: ProjectListProps) {
     <div className={styles.groups}>
       {projectGroups.map(([period, groupedProjects]) => (
         <section className={styles.group} key={period}>
-          <div className={styles.groupHeader}>
-            <h3 className={styles.groupTitle}>{period}</h3>
-          </div>
           <div className={styles.grid}>
             {groupedProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />

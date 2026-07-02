@@ -1,0 +1,148 @@
+@use "../../../../styles/mixins" as *;
+@use "../../../../styles/tokens" as *;
+
+.list {
+  display: grid;
+  gap: $space-4;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  min-width: 0;
+}
+
+.card {
+  @include glass-panel;
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.28fr) minmax(0, 1fr);
+  gap: $space-8;
+  border-radius: $radius-2xl;
+  padding: $space-6;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.periodColumn {
+  min-width: 0;
+}
+
+.period {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.content {
+  min-width: 0;
+}
+
+.heading {
+  display: grid;
+  gap: $space-1;
+}
+
+.role {
+  margin: 0;
+  color: var(--color-foreground);
+  font-size: 1.25rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.company {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-foreground) 82%, var(--color-muted));
+  font-size: 1.05rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.description {
+  margin: $space-3 0 0;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.projectsBlock {
+  border-top: 1px solid var(--color-hairline);
+  margin-top: $space-5;
+  padding-top: $space-5;
+}
+
+.blockLabel {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-muted) 76%, transparent);
+  font-family: $font-mono;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.projects {
+  display: grid;
+  gap: $space-2;
+  margin: $space-3 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project {
+  display: flex;
+  gap: $space-3;
+  color: color-mix(in srgb, var(--color-foreground) 84%, var(--color-muted));
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.project::before {
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 1px;
+  margin-top: 0.85em;
+  background: color-mix(in srgb, var(--color-accent) 72%, transparent);
+  content: "";
+}
+
+.stackBlock {
+  margin-top: $space-5;
+}
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin: $space-3 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stackTag {
+  border: 1px solid var(--color-hairline);
+  border-radius: $radius-sm;
+  padding: $space-1 $space-2;
+  color: var(--color-muted);
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: $space-5;
+  }
+}

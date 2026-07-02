@@ -13,7 +13,11 @@ const projectTypeLabels: Record<Project["type"], string> = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className={styles.card}>
+    <Link
+      aria-label={`${project.title} 상세 보기`}
+      className={styles.card}
+      href={`/projects/${project.slug}`}
+    >
       <div className={styles.visual} aria-hidden="true">
         <span>{project.title.slice(0, 2)}</span>
       </div>
@@ -23,9 +27,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </span>
         <span>{project.role}</span>
       </div>
-      <h3 className={styles.title}>
-        <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-      </h3>
+      <h3 className={styles.title}>{project.title}</h3>
       <p className={styles.summary}>{project.summary}</p>
       <ul className={styles.tags} aria-label={`${project.title} 기술 스택`}>
         {project.tags.map((tag) => (
@@ -34,6 +36,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </li>
         ))}
       </ul>
-    </article>
+    </Link>
   );
 }
