@@ -13,6 +13,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "english-study",
+    title: "English Study",
+    summary:
+      "AI 기반 회화, 단어, 문법 학습과 TTS 발음 기능을 제공하는 영어·베트남어 학습 서비스입니다.",
+    period: "2026",
+    type: "personal",
+    role: "Planning · Frontend Developer",
+    tags: ["Next.js", "TypeScript", "Supabase", "OpenRouter", "AI", "TTS"],
+  },
+  {
     slug: "ai-household-account",
     title: "AI Household Account",
     summary:
@@ -83,7 +93,7 @@ export const projects: Project[] = [
   },
   {
     slug: "guruscan",
-    title: "GuruScan",
+    title: "GuruScan (Blockchain Explorer)",
     summary:
       "Cosmos 기반 블록체인 네트워크 데이터를 조회하고 분석할 수 있는 Blockchain Explorer입니다.",
     period: "2026",
